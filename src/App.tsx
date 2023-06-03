@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { DOMMessage } from './types'
+import { Switch } from '@mui/material'
 import styles from './App.module.scss'
 
 function App() {
@@ -22,13 +23,11 @@ function App() {
 
     return (
         <div className={styles.container}>
-            <label className={styles.switch}>
-                <input
-                    type="checkbox"
-                    checked={gray}
-                    onChange={() => setGray(!gray)}
-                />
-            </label>
+            <Switch
+                checked={gray}
+                onChange={() => setGray(v => !v)}
+                size="medium"
+            />
         </div>
     )
 }
